@@ -90,6 +90,14 @@ nav ul {
     justify-content: center;
 }
 
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    padding: 0 50px;
+}
+
 #project-holder {
     margin: 0 auto;
     width: 30%;
