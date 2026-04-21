@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'JetBrains Mono', monospace;
-    background-color: #7b5ea7;
+    background-color: #6a5a83;
 }
 
 a {
@@ -14,10 +14,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #7b5ea7;
-    z-index: 1000;
-    position: sticky;
-    top: 0;
+    background-color: #6a5a83;
+
 }
 
 header h1 {
@@ -110,6 +108,13 @@ nav ul li a:hover{
     align-self: center;
     justify-content: center;
     padding: 0 50px;
+}
+
+#projects_text {
+    font-size: 24px;
+    font-style: bold;
+    margin-top: 10px;
+    text-align: center;
 }
 
 /* Projects Container */

@@ -36,77 +36,42 @@ const PROJECTS = [
     }
 ];
 
-// UI Manager
-const ProjectUI = {
-    container: null,
-    PROJECTS_TO_SHOW: 3,
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
 
-    init() {
-        this.container = document.getElementById('projects-container');
+function createProjectCard(project) {
+    const imageUrl = project.image;
 
-        // Initial render
-        this.render();
-    },
+    const techBadges = project.tech && project.tech.length > 0
+        ? `<div class="project-tech-list">
+                ${project.tech.map(t => `<span class="tech-badge">${escapeHtml(t)}</span>`).join('')}
+            </div>`
+        : '';
 
-    render() {
-        const projects = ProjectDB.getAll();
-
-        if (projects.length === 0) {
-            this.container.innerHTML = '<div class="empty-state">No projects yet.</div>';
-            return;
-        }
-        
-        // Show only first 3 projects
-        const visibleProjects = projects.slice(0, this.PROJECTS_TO_SHOW);
-        
-        let html = visibleProjects
-            .map(project => this.createCard(project))
-            .join('');
-        
-        // Add Show More button if there are more projects than the limit
-        if (projects.length > this.PROJECTS_TO_SHOW) {
-            html += this.createShowMoreButton();
-        }
-        
-        this.container.innerHTML = html;
-    },
-
-    createCard(project) {
-        const imageUrl = project.image || 'assets/logo.png';
-        
-        return `
-            <div class="project-card">
-                <img src="${this.escapeHtml(imageUrl)}" alt="${this.escapeHtml(project.name)}" class="project-image" onerror="this.src='assets/logo.png'">
-                <div class="project-content">
-                    <h3 class="project-title">${this.escapeHtml(project.name)}</h3>
-                    <p class="project-desc">${this.escapeHtml(project.description)}</p>
-                    
-                    ${project.tech && project.tech.length > 0 ? `
-                        <div class="project-tech-list">
-                            ${project.tech.map(t => `<span class="tech-badge">${this.escapeHtml(t)}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                </div>
+    return `
+        <div class="project-card">
+            <img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(project.name)}" class="project-image" onerror="this.src='assets/logo.png'">
+            <div class="project-content">
+                <h3 class="project-title">${escapeHtml(project.name)}</h3>
+                <p class="project-desc">${escapeHtml(project.description)}</p>
+                ${techBadges}
             </div>
-        `;
-    },
+        </div>
+    `;
+}
 
-    createShowMoreButton() {
-        return `
-            <div class="show-more-container">
-                <a href="projects.html" class="show-more-btn">Show More Projects</a>
-            </div>
-        `;
-    },
+function renderProjects() {
+    const container = document.getElementById('projects-container');
 
-    escapeHtml(text) {
-        const map = {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#039;'
-        };
-        return text.replace(/[&<>"']/g, m => map[m]);
+    if (!PROJECTS || PROJECTS.length === 0) {
+        container.innerHTML = '<p class="empty-state">No projects to display.</p>';
+        return;
     }
-};
+
+    container.innerHTML = PROJECTS.map(createProjectCard).join('');
+}
+
+renderProjects();
