@@ -74,7 +74,6 @@ function renderProjects() {
     container.innerHTML = PROJECTS.map(createProjectCard).join('');
 }
 
-/* ===== SMOOTH SCROLL ===== */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -89,7 +88,6 @@ function initSmoothScroll() {
     });
 }
 
-/* ===== MOBILE MENU ===== */
 function initMobileMenu() {
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
@@ -101,7 +99,6 @@ function initMobileMenu() {
     }
 }
 
-/* ===== ACTIVE NAV HIGHLIGHT ===== */
 function initActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -124,7 +121,6 @@ function initActiveNav() {
     });
 }
 
-/* ===== DYNAMIC HEADER ===== */
 function initDynamicHeader() {
     const header = document.getElementById('main-header');
     if (!header) return;
@@ -138,7 +134,6 @@ function initDynamicHeader() {
     });
 }
 
-/* ===== COMMISSION FORM ===== */
 function initCommissionForm() {
     const form = document.getElementById('commission-form');
     const status = document.getElementById('form-status');
@@ -167,7 +162,6 @@ function initCommissionForm() {
     });
 }
 
-/* ===== INIT ===== */
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     initSmoothScroll();
