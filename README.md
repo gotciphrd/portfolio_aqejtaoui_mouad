@@ -8,6 +8,7 @@
 &gt; Single-page portfolio built with html/css/javascript.
 
 **Live site:** [Mouad Aqejtaoui | Portfolio](https://gotciphrd.github.io/portfolio_aqejtaoui_mouad/)
+**Figma Original Design** [Figma Design](https://www.figma.com/design/r6Y9TD7ViydeSEhH4qp8TN/Portfolio-Design?node-id=2-164&t=IrrgchZFuVbObAiK-1)
 
 ---
 
