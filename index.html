@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Mouad AQEJTAOUI | Cipher — Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Sekuya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1><a href="index.html" class="nav">My Portfolio</a></h1>
+    <header id="main-header">
+        <h1><a href="index.html">My Portfolio</a></h1>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <nav>
             <ul>
-                <li><a href="#projects" class="nav">Projects</a></li>
-                <li><a href="#about" class="nav">About Me</a></li>
-                <li><a href="#contact" class="nav">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#commission">Commission Me</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -23,25 +25,114 @@
     <section id="hero">
         <div class="hero-content">
             <h2>Welcome to My Portfolio!</h2>
-            <p>Hello, I'm <span style="text-decoration: underline;">Mouad AQEJTAOUI</span>,<br>I go by <span style="text-decoration: underline;">Cipher</span>, an alias I choose for myself since the beginning of my journey, As a <span style="text-decoration: underline;">front-end developer and designer </span></p>
-            <button id="view-projects" href="#projects">View Projects</button>
+            <p>Hello, I'm <span class="highlight">Mouad AQEJTAOUI</span>,<br>I go by <span class="highlight">Cipher</span>, an alias I chose for myself since the beginning of my journey. I'm a <span class="highlight">front-end developer and designer</span>.</p>
+            <a href="#projects" class="btn-primary">View Projects</a>
         </div>
-        <img id="logo" src="assets/logo.png" alt="logo">
+        <img id="logo" src="assets/logo.png" alt="Cipher Logo">
     </section>
 
     <section id="projects">
-        <h1 id="sec-title">Projects</h1>
-        <p id="projects_text">A small introduction to my work and experience through my projects and contributions</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">A small introduction to my work and experience through my projects and contributions</p>
         <div id="projects-container" class="projects-container"></div>
-        <a id="view-more-projects" class="view-more-btn" href="projects.html">More Projects</a>
     </section>
 
     <section id="about">
-        <h1 id="sec-title">About Me</h1>
-        <div class="about-content">
-            <p>Hello, I'm <span style="text-decoration: underline;">Mouad AQEJTAOUI</span>,<br>I go by <span style="text-decoration: underline;">Cipher</span>, an alias I choose for myself since the beginning of my journey, As a <span style="text-decoration: underline;">front-end developer and designer </span></p>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-wrapper">
+            <img id="about-logo" src="assets/logo.png" alt="Cipher Logo">
+            <div class="about-content">
+                 <p>I’m Mouad AQEJTAOUI, currently a first-year DUT student at ESTG. I’ve had a passion for electronics from a young age, especially computers, which led me to explore various fields in computer science. Over time, I decided to follow my interests and shift my focus from back-end development to front-end, where I work as a developer and also a designer.</p>
+            </div>
         </div>
     </section>
-    
+
+    <section id="commission">
+        <h2 class="section-title">Commission Me</h2>
+        <p class="section-subtitle">Have a project in mind? Let's build something amazing together.</p>
+        <div class="commission-wrapper">
+            <div class="commission-info">
+                <h3>What I Offer</h3>
+                <ul>
+                    <li>🎨 UI/UX Design & Prototyping</li>
+                    <li>💻 Front-End Development</li>
+                    <li>📱 Responsive Web Design</li>
+                    <li>⚡ Performance Optimization</li>
+                    <li>🔧 Website Maintenance</li>
+                </ul>
+                <div class="pricing-note">
+                    <p>Rates vary by project scope. Simple landing pages start at <strong>$150</strong>. Full web apps quoted individually.</p>
+                </div>
+            </div>
+            <form id="commission-form" class="commission-form">
+                <div class="form-group">
+                    <label for="comm-name">Name</label>
+                    <input type="text" id="comm-name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="comm-email">Email</label>
+                    <input type="email" id="comm-email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="comm-type">Project Type</label>
+                    <select id="comm-type" name="type" required>
+                        <option value="" disabled selected>Select a project type</option>
+                        <option value="landing">Landing Page</option>
+                        <option value="portfolio">Portfolio Website</option>
+                        <option value="ecommerce">E-Commerce Site</option>
+                        <option value="webapp">Web Application</option>
+                        <option value="design">UI/UX Design Only</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comm-budget">Budget Range (USD)</label>
+                    <select id="comm-budget" name="budget" required>
+                        <option value="" disabled selected>Select your budget</option>
+                        <option value="<500">Less than $500</option>
+                        <option value="500-1000">$500 – $1,000</option>
+                        <option value="1000-2500">$1,000 – $2,500</option>
+                        <option value="2500-5000">$2,500 – $5,000</option>
+                        <option value="5000+">$5,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comm-message">Project Details</label>
+                    <textarea id="comm-message" name="message" rows="5" placeholder="Describe your project, timeline, and any specific requirements..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Request</button>
+                <p id="form-status" class="form-status"></p>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Let's connect. Reach out through any of the channels below.</p>
+        <div class="contact-links">
+            <a href="mailto:mouad.aqejtaoui@email.com" class="contact-card">
+                <div class="contact-logo-wrap">
+                    <img src="/assets/email.png" alt="Email" class="contact-logo" data-social="email">
+                </div>
+                <span class="contact-label">Email</span>
+            </a>
+            <a href="https://github.com" target="_blank" class="contact-card">
+                <div class="contact-logo-wrap">
+                    <img src="/assets/github.png" alt="GitHub" class="contact-logo" data-social="github">
+                </div>
+                <span class="contact-label">GitHub</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="contact-card">
+                <div class="contact-logo-wrap">
+                    <img src="/assets/linkedin.png" alt="LinkedIn" class="contact-logo" data-social="linkedin">
+                </div>
+                <span class="contact-label">LinkedIn</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Mouad AQEJTAOUI (Cipher). Built with passion.</p>
+    </footer>
 </body>
 </html>
