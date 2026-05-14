@@ -145,7 +145,7 @@ function initCommissionForm() {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        if (!data.name || !data.email || !data.type || !data.budget || !data.message) {
+        if (!data.name || !data.email || !data.type || !data.message) {
             status.textContent = 'Please fill in all fields.';
             status.className = 'form-status error';
             return;
