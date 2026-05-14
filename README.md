@@ -22,12 +22,10 @@ I'm **Mouad AQEJTAOUI** — first-year DUT student at ESTG, front-end developer 
 - Contact / social links
 
 ### Tools:
-- HTML5 · CSS3 · Vanilla JavaScript
-- JetBrains Mono
-- Fully responsive
+- languages : HTML5 · CSS3 · Vanilla JavaScript
+- fonts :JetBrains Mono
 
-### Run locally
+### make it your own?
 ```bash
 git clone https://github.com/gotciphrd/portfolio_aqejtaoui_mouad
 cd cipher-portfolio
-# open index.html in your browser
